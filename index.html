@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>트렌드 대시보드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: light;
@@ -62,7 +65,18 @@
   }
 
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--page); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  body {
+    margin: 0; background: var(--page);
+    font-family: "Noto Sans KR", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* body sits OUTSIDE .viz-root's variable scope, so it needs its own
+     explicit page-plane color per mode instead of var(--page) */
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) body { background: #0d0d0d; }
+  }
+  :root[data-theme="dark"] body { background: #0d0d0d; }
   img { max-width: 100%; }
   [hidden] { display: none !important; }
 
@@ -308,7 +322,7 @@
       .slice(0, 15);
 
     var section = document.createElement("section");
-    section.className = "recur";
+    section.className = "topic-card recur";
 
     if (!list.length) {
       section.innerHTML = "<h2>최근 " + historyByDay.length + "일간 반복 등장한 급상승 키워드</h2>" +
