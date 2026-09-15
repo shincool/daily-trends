@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>트렌드 대시보드</title>
+<style>
+  :root {
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .viz-root {
+    color-scheme: light;
+    --page:           #f9f9f7;
+    --surface-1:      #fcfcfb;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --grid:           #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --top-hue:        #2a78d6; /* series slot 1, blue: steady/top */
+    --top-hue-soft:   #cde2fb;
+    --rising-hue:     #eb6834; /* series slot 2, orange: growth/rising */
+    --rising-hue-soft:#fbd9c8;
+    --good-text:      #006300;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --page:           #0d0d0d;
+      --surface-1:      #1a1a19;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --grid:           #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --top-hue:        #3987e5;
+      --top-hue-soft:   #1c3a5c;
+      --rising-hue:     #d95926;
+      --rising-hue-soft:#5c2c14;
+      --good-text:      #0ca30c;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --page:           #0d0d0d;
+    --surface-1:      #1a1a19;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --grid:           #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --top-hue:        #3987e5;
+    --top-hue-soft:   #1c3a5c;
+    --rising-hue:     #d95926;
+    --rising-hue-soft:#5c2c14;
+    --good-text:      #0ca30c;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+
+  .viz-root { padding: 28px 16px 64px; }
+  .wrap { max-width: 960px; margin: 0 auto; }
+
+  header.top { margin-bottom: 24px; }
+  header.top h1 { margin: 0 0 6px; font-size: 22px; color: var(--text-primary); }
+  header.top p { margin: 0; font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
+  .updated-pill {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+    font-size: 12.5px; color: var(--text-secondary); background: var(--surface-1);
+    border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px;
+  }
+  .updated-pill b { color: var(--text-primary); font-weight: 600; }
+
+  .status { font-size: 13.5px; color: var(--text-secondary); padding: 16px 0; }
+  .status.err { color: #b23; }
+
+  section.topic-card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px 20px; margin-bottom: 16px;
+  }
+  section.topic-card h2 { margin: 0 0 2px; font-size: 17px; color: var(--text-primary); }
+  section.topic-card .empty-note { font-size: 13px; color: var(--text-muted); margin: 8px 0 2px; }
+
+  .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+  @media (max-width: 640px) { .panels { grid-template-columns: 1fr; } }
+
+  .panel h3 {
+    font-size: 12.5px; text-transform: uppercase; letter-spacing: .02em;
+    color: var(--text-secondary); margin: 0 0 10px; font-weight: 600;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .panel h3 .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; }
+  .panel.top h3 .dot { background: var(--top-hue); }
+  .panel.rising h3 .dot { background: var(--rising-hue); }
+
+  .toggle-btn {
+    font-size: 11.5px; color: var(--text-muted); background: none; border: 1px solid var(--border);
+    border-radius: 6px; padding: 2px 8px; cursor: pointer; font-family: inherit;
+  }
+  .toggle-btn:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+  .bar-row { display: grid; grid-template-columns: 108px 1fr 52px; align-items: center; gap: 8px; padding: 3px 0; }
+  .bar-label {
+    font-size: 12.5px; color: var(--text-primary); white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bar-track { position: relative; height: 16px; background: var(--grid); border-radius: 4px; overflow: hidden; }
+  .bar-fill {
+    position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px;
+    min-width: 4px; transition: filter .12s;
+  }
+  .panel.top .bar-fill { background: var(--top-hue); }
+  .panel.rising .bar-fill { background: var(--rising-hue); }
+  .bar-row:hover .bar-fill { filter: brightness(1.12); }
+  .bar-value {
+    font-size: 12px; color: var(--text-secondary); text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .data-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 8px; }
+  .data-table caption { text-align: left; font-size: 11.5px; color: var(--text-muted); margin-bottom: 4px; }
+  .data-table th, .data-table td {
+    text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--grid);
+    color: var(--text-primary);
+  }
+  .data-table th { color: var(--text-secondary); font-weight: 600; font-size: 11.5px; }
+  .data-table td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+
+  section.recur h2 { margin: 0 0 4px; font-size: 17px; color: var(--text-primary); }
+  section.recur p.sub { margin: 0 0 14px; font-size: 13px; color: var(--text-secondary); }
+  .recur-row td.rank { color: var(--text-muted); }
+  .recur-row td.query { font-weight: 600; }
+  .recur-row td.topic-tag {
+    font-size: 11px; color: var(--text-secondary);
+  }
+  .recur-row td.days b { color: var(--good-text); }
+
+  footer.note { margin-top: 22px; font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+  footer.note a { color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="viz-root">
+  <div class="wrap">
+
+    <header class="top">
+      <h1>청약 · 부동산 · AI 검색 트렌드 대시보드</h1>
+      <p>Google Trends(pytrends)에서 매일 오전 8시 자동 수집한 연관 검색어 데이터입니다.<br>
+      각 주제 안에서 <b>요즘 뜨는(rising)</b> 세부 검색어를 포착해 콘텐츠 소재로 쓰기 위한 용도예요.</p>
+      <span class="updated-pill" id="updatedPill">데이터 불러오는 중&hellip;</span>
+    </header>
+
+    <div id="status" class="status">results/related_latest.csv 불러오는 중&hellip;</div>
+    <div id="content" hidden></div>
+
+    <footer class="note" id="footerNote" hidden></footer>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var KEYWORDS = ["청약", "아파트", "종합소득세", "구독서비스", "AI"];
+  var statusEl = document.getElementById("status");
+  var contentEl = document.getElementById("content");
+  var updatedPill = document.getElementById("updatedPill");
+  var footerNote = document.getElementById("footerNote");
+
+  function parseCSV(text) {
+    // strip BOM
+    if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
+    var rows = [];
+    var row = [];
+    var field = "";
+    var inQuotes = false;
+    for (var i = 0; i < text.length; i++) {
+      var c = text[i];
+      if (inQuotes) {
+        if (c === '"') {
+          if (text[i + 1] === '"') { field += '"'; i++; }
+          else { inQuotes = false; }
+        } else { field += c; }
+      } else {
+        if (c === '"') inQuotes = true;
+        else if (c === ',') { row.push(field); field = ""; }
+        else if (c === '\r') { /* skip */ }
+        else if (c === '\n') { row.push(field); rows.push(row); row = []; field = ""; }
+        else { field += c; }
+      }
+    }
+    if (field.length || row.length) { row.push(field); rows.push(row); }
+    if (!rows.length) return [];
+    var header = rows[0];
+    var out = [];
+    for (var r = 1; r < rows.length; r++) {
+      if (rows[r].length === 1 && rows[r][0] === "") continue;
+      var obj = {};
+      for (var c2 = 0; c2 < header.length; c2++) obj[header[c2]] = rows[r][c2];
+      out.push(obj);
+    }
+    return out;
+  }
+
+  function fetchText(path) {
+    return fetch(path, { cache: "no-store" }).then(function (res) {
+      if (!res.ok) throw new Error(path + " -> HTTP " + res.status);
+      return res.text();
+    });
+  }
+
+  function fetchTextOrNull(path) {
+    return fetchText(path).catch(function () { return null; });
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function renderBarPanel(kind, label, rows, valueFmt) {
+    // kind: 'top' | 'rising'
+    var max = 0;
+    rows.forEach(function (r) { if (r.value > max) max = r.value; });
+    if (max <= 0) max = 1;
+
+    var barsHtml = rows.map(function (r) {
+      var pct = Math.max((r.value / max) * 100, 2);
+      return '<div class="bar-row" title="' + escapeHtml(r.query) + ' &middot; ' + escapeHtml(valueFmt(r.value)) + '">' +
+        '<div class="bar-label">' + escapeHtml(r.query) + '</div>' +
+        '<div class="bar-track"><div class="bar-fill" style="width:' + pct.toFixed(1) + '%"></div></div>' +
+        '<div class="bar-value">' + escapeHtml(valueFmt(r.value)) + '</div>' +
+        '</div>';
+    }).join("");
+
+    var tableRows = rows.map(function (r) {
+      return "<tr><td>" + escapeHtml(r.query) + "</td><td class=\"num\">" + escapeHtml(valueFmt(r.value)) + "</td></tr>";
+    }).join("");
+
+    var uid = "tbl-" + kind + "-" + Math.random().toString(36).slice(2, 8);
+
+    return '<div class="panel ' + kind + '">' +
+      '<h3><span><span class="dot"></span>' + label + '</span>' +
+        '<button class="toggle-btn" type="button" data-target="' + uid + '">표로 보기</button>' +
+      '</h3>' +
+      '<div class="bars">' + (barsHtml || '<p class="empty-note">데이터 없음</p>') + '</div>' +
+      '<table class="data-table" id="' + uid + '" hidden>' +
+        '<thead><tr><th>검색어</th><th>' + (kind === "top" ? "검색량" : "증가율") + '</th></tr></thead>' +
+        '<tbody>' + tableRows + '</tbody>' +
+      '</table>' +
+    '</div>';
+  }
+
+  function topValueFmt(v) { return String(v); }
+  function risingValueFmt(v) { return "+" + v.toLocaleString("ko-KR") + "%"; }
+
+  function buildTopicSection(topic, relatedRows) {
+    var topRows = relatedRows.filter(function (r) { return r.topic === topic && r.type === "top"; })
+      .sort(function (a, b) { return b.value - a.value; }).slice(0, 8);
+    var risingRows = relatedRows.filter(function (r) { return r.topic === topic && r.type === "rising"; })
+      .sort(function (a, b) { return b.value - a.value; }).slice(0, 8);
+
+    var section = document.createElement("section");
+    section.className = "topic-card";
+
+    if (!topRows.length && !risingRows.length) {
+      section.innerHTML = "<h2>" + escapeHtml(topic) + "</h2>" +
+        '<p class="empty-note">이 키워드는 현재 검색량이 낮아 Google Trends 연관 검색어가 수집되지 않고 있어요.</p>';
+      return section;
+    }
+
+    section.innerHTML = "<h2>" + escapeHtml(topic) + "</h2>" +
+      '<div class="panels">' +
+        renderBarPanel("top", "꾸준히 많이 검색됨", topRows, topValueFmt) +
+        renderBarPanel("rising", "요즘 뜨는 검색어", risingRows, risingValueFmt) +
+      "</div>";
+    return section;
+  }
+
+  function buildRecurSection(historyByDay) {
+    // historyByDay: [{day, rows: [{topic,type,query,value}]}], oldest -> newest
+    var counts = {}; // key: topic + '' + query -> {topic, query, days:Set, latestValue, latestDay}
+    historyByDay.forEach(function (entry) {
+      var seenToday = {};
+      entry.rows.forEach(function (r) {
+        if (r.type !== "rising") return;
+        var key = r.topic + "" + r.query;
+        if (seenToday[key]) return; // count each query once per day
+        seenToday[key] = true;
+        if (!counts[key]) counts[key] = { topic: r.topic, query: r.query, dayCount: 0, latestValue: r.value, latestDay: entry.day };
+        counts[key].dayCount += 1;
+        if (entry.day >= counts[key].latestDay) { counts[key].latestValue = r.value; counts[key].latestDay = entry.day; }
+      });
+    });
+
+    var list = Object.keys(counts).map(function (k) { return counts[k]; })
+      .filter(function (c) { return c.dayCount >= 2; })
+      .sort(function (a, b) { return (b.dayCount - a.dayCount) || (b.latestValue - a.latestValue); })
+      .slice(0, 15);
+
+    var section = document.createElement("section");
+    section.className = "recur";
+
+    if (!list.length) {
+      section.innerHTML = "<h2>최근 " + historyByDay.length + "일간 반복 등장한 급상승 키워드</h2>" +
+        '<p class="sub">아직 이틀 이상 연속으로 뜬 키워드가 없어요. 데이터가 더 쌓이면 여기에 표시됩니다.</p>';
+      return section;
+    }
+
+    var rows = list.map(function (c, i) {
+      return '<tr class="recur-row">' +
+        "<td class=\"rank\">" + (i + 1) + "</td>" +
+        "<td class=\"query\">" + escapeHtml(c.query) + "</td>" +
+        "<td class=\"topic-tag\">" + escapeHtml(c.topic) + "</td>" +
+        "<td class=\"days\">" + "<b>" + c.dayCount + "</b> / " + historyByDay.length + "일" + "</td>" +
+        "<td class=\"num\">" + risingValueFmt(c.latestValue) + "</td>" +
+        "</tr>";
+    }).join("");
+
+    section.innerHTML = "<h2>최근 " + historyByDay.length + "일간 반복 등장한 급상승 키워드</h2>" +
+      '<p class="sub">하루만 튀고 마는 노이즈가 아니라, 여러 날 계속 뜨는 검색어예요. 블로그·숏폼 소재로 우선순위를 둘 만합니다.</p>' +
+      '<table class="data-table">' +
+        "<thead><tr><th>#</th><th>검색어</th><th>주제</th><th>등장일수</th><th>최근 증가율</th></tr></thead>" +
+        "<tbody>" + rows + "</tbody>" +
+      "</table>";
+    return section;
+  }
+
+  function attachToggleHandlers(root) {
+    root.querySelectorAll(".toggle-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var tbl = document.getElementById(btn.getAttribute("data-target"));
+        var bars = btn.closest(".panel").querySelector(".bars");
+        if (!tbl) return;
+        var showingTable = !tbl.hidden;
+        tbl.hidden = showingTable;
+        bars.hidden = !showingTable;
+        btn.textContent = showingTable ? "표로 보기" : "차트로 보기";
+      });
+    });
+  }
+
+  function fmtDate(d) {
+    return d; // already YYYY-MM-DD
+  }
+
+  Promise.all([
+    fetchText("./results/related_latest.csv"),
+    fetchTextOrNull("./results/trends_latest.csv")
+  ]).then(function (results) {
+    var relatedText = results[0];
+    var trendsText = results[1];
+
+    var relatedRaw = parseCSV(relatedText);
+    var relatedRows = relatedRaw.map(function (r) {
+      return { topic: r.topic, type: r.type, query: r.query, value: parseFloat(r.value) || 0 };
+    });
+
+    // figure out available days from trends_latest.csv (interest_over_time, ~7 days of hourly rows)
+    var days = [];
+    if (trendsText) {
+      var trendsRaw = parseCSV(trendsText);
+      var daySet = {};
+      trendsRaw.forEach(function (r) {
+        var dateVal = r.date || r["﻿date"];
+        if (!dateVal) return;
+        var day = dateVal.split(" ")[0];
+        if (day) daySet[day] = true;
+      });
+      days = Object.keys(daySet).sort();
+    }
+
+    var latestDay = days.length ? days[days.length - 1] : null;
+    updatedPill.innerHTML = latestDay
+      ? "마지막 업데이트: <b>" + escapeHtml(latestDay) + "</b> (매일 오전 8시 자동 수집)"
+      : "매일 오전 8시 자동 수집";
+
+    // build topic sections from today's related_latest.csv
+    KEYWORDS.forEach(function (kw) {
+      contentEl.appendChild(buildTopicSection(kw, relatedRows));
+    });
+
+    statusEl.hidden = true;
+    contentEl.hidden = false;
+
+    footerNote.innerHTML =
+      "종합소득세, 구독서비스는 검색량이 낮아 Google Trends가 연관 검색어를 제공하지 않는 날이 많아요. " +
+      "데이터가 쌓이면 자동으로 채워집니다. &middot; " +
+      '소스: <a href="https://github.com/shincool/daily-trends" target="_blank" rel="noopener">shincool/daily-trends</a>';
+    footerNote.hidden = false;
+
+    // fetch up to 7 days of history for the "repeat rising" section
+    if (!days.length) { attachToggleHandlers(contentEl); return; }
+    var recentDays = days.slice(-7);
+    Promise.all(recentDays.map(function (day) {
+      return fetchTextOrNull("./results/related_" + day + ".csv").then(function (text) {
+        if (!text) return null;
+        var rows = parseCSV(text).map(function (r) {
+          return { topic: r.topic, type: r.type, query: r.query, value: parseFloat(r.value) || 0 };
+        });
+        return { day: day, rows: rows };
+      });
+    })).then(function (entries) {
+      var historyByDay = entries.filter(Boolean);
+      if (historyByDay.length) {
+        contentEl.appendChild(buildRecurSection(historyByDay));
+      }
+      attachToggleHandlers(contentEl);
+    });
+  }).catch(function (err) {
+    statusEl.className = "status err";
+    statusEl.textContent = "데이터를 불러오지 못했어요 (" + err.message + "). " +
+      "이 index.html 파일이 results/ 폴더와 같은 위치(리포지토리 루트)에 있는지 확인해 주세요.";
+  });
+})();
+</script>
+</body>
+</html>
