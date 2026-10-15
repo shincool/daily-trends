@@ -1,102 +1,110 @@
 ﻿topic,type,query,value
-청약,top,lh,100
-청약,top,lh 청약,95
-청약,top,주택 청약,83
-청약,top,청약 플러스,72
-청약,top,lh 청약 플러스,60
-청약,top,청약 센터,43
-청약,top,청약 통장,40
-청약,top,sh,40
-청약,top,sh 청약,39
-청약,top,청년 청약,29
-청약,top,sh 청약 센터,24
-청약,top,청년 주택,23
-청약,top,청년 주택 청약,23
+청약,top,lh 청약,100
+청약,top,lh,99
+청약,top,주택 청약,84
+청약,top,청약 플러스,69
+청약,top,lh 청약 플러스,61
+청약,top,청약 센터,44
+청약,top,sh,41
+청약,top,sh 청약,41
+청약,top,청약 통장,36
+청약,top,청년 청약,28
+청약,top,sh 청약 센터,25
+청약,top,청년 주택,22
+청약,top,청년 주택 청약,21
 청약,top,청약 철회,20
-청약,top,lh 청약 센터,17
-청약,top,주택 청약 통장,17
+청약,top,lh 청약 센터,18
+청약,top,주택 청약 통장,15
 청약,top,청약 해지,14
 청약,top,아파트 청약,14
 청약,top,청년 주택 드림 청약,12
-청약,top,청년 청약 통장,12
-청약,top,lh 주택 청약,11
+청약,top,lh 주택 청약,12
+청약,top,청년 청약 통장,11
 청약,top,청약 일정,11
-청약,top,청약 당첨,10
+청약,top,청년 드림 청약 통장,9
 청약,top,주택 청약 종합 저축,9
-청약,top,청년 주택 드림 청약 통장,9
-청약,rising,기금 e 든든,500
-청약,rising,hug 든든 전세 주택,120
-청약,rising,gh 주택 청약 센터,90
-청약,rising,청약 통장 담보 대출,80
-청약,rising,bmc 청약 센터,70
-청약,rising,청년 도약 계좌,50
-청약,rising,롤 청약 철회,50
-청약,rising,청약 담보 대출,40
+청약,top,청약 당첨,9
+청약,rising,유상 청약,250
+청약,rising,발 로란트 청약 철회 하는 법,130
+청약,rising,롤 청약 철회,60
+청약,rising,sh 청약 센터,50
+청약,rising,발 로란트 예외적 청약 철회,40
+청약,rising,gh 청약 센터,40
+청약,rising,청약 통장 담보 대출,40
 아파트,top,마포 아파트,100
-아파트,top,신비 아파트,94
-아파트,top,아파트 시세,94
-아파트,top,아파트 단지,85
-아파트,top,서울 아파트,81
-아파트,top,현대 아파트,72
-아파트,top,임대 아파트,67
-아파트,top,주공 아파트,53
-아파트,top,은마 아파트,47
-아파트,top,아파트 아이,33
-아파트,top,자이 아파트,33
-아파트,top,아파트 실거래,25
-아파트,top,아파트 청약,23
-아파트,top,아파트 관리비,23
-아파트,top,디 에이치 반포 라 클라스 아파트,21
-아파트,top,아파트 실거래 가,20
-아파트,top,아파트 경매,16
-아파트,top,아파트 평면도,16
-아파트,top,부영 아파트,15
-아파트,top,호갱 노노 아파트,10
-아파트,top,개포 주공 아파트,9
-아파트,top,라쿤 아파트,7
+아파트,top,신비 아파트,80
+아파트,top,아파트 단지,79
+아파트,top,아파트 시세,78
+아파트,top,서울 아파트,73
+아파트,top,임대 아파트,60
+아파트,top,주공 아파트,52
+아파트,top,은마 아파트,43
+아파트,top,아파트 분양,40
+아파트,top,자이 아파트,30
+아파트,top,아파트 아이,29
+아파트,top,아파트 실거래,22
+아파트,top,아파트 청약,22
+아파트,top,아파트 관리비,21
+아파트,top,디 에이치 반포 라 클라스 아파트,20
+아파트,top,아파트 인테리어,20
+아파트,top,아파트 실거래 가,19
+아파트,top,강남 아파트,15
+아파트,top,아파트 평면도,14
+아파트,top,아파트 경매,14
+아파트,top,부영 아파트,13
+아파트,top,개포 주공 아파트,10
+아파트,top,라쿤 아파트,6
 아파트,top,한국 아파트 신문,6
 아파트,top,신비 아파트 리온,5
-아파트,top,압구정 신현대 아파트,2
-아파트,rising,디 에이치 반포 라 클라스 아파트,6950
-아파트,rising,자양 강변 아이 파크 아파트,3750
-아파트,rising,반포 대우 푸르지오 아파트,2350
-아파트,rising,마포 아파트,1700
+아파트,rising,디 에이치 반포 라 클라스 아파트,18450
+아파트,rising,반포 대우 푸르지오 아파트,3100
+아파트,rising,마포 아파트,2200
 아파트,rising,개포 주공 아파트,1200
-아파트,rising,압구정 신현대 아파트,300
+아파트,rising,자양 강변 아이 파크 아파트,450
+아파트,rising,한국 아파트 신문,300
 아파트,rising,라쿤 아파트,250
-아파트,rising,한국 아파트 신문,200
-아파트,rising,삼익 비치 타운 아파트,160
-아파트,rising,신비 아파트 리온,50
-아파트,rising,서울 아파트 거래량,40
-아파트,rising,신비 아파트 시즌 6,40
+아파트,rising,압구정 신현대 아파트,250
+아파트,rising,충정 아파트,90
+아파트,rising,아파트 멘터 리,70
+아파트,rising,신비 아파트 리온,60
+아파트,rising,은마 아파트,40
+종합소득세,top,종합 소득세,100
+종합소득세,top,종합 소득세 세율,7
+종합소득세,top,종합 소득세 환급,6
+종합소득세,top,종합 소득세 과세 표준,4
+종합소득세,top,국세청,3
+종합소득세,top,홈택스 종합 소득세 신고,3
+종합소득세,top,종합 소득세 신고 대상,2
+종합소득세,top,홈 텍스,2
+종합소득세,top,종합 소득세 신고 기간,1
+종합소득세,top,종합 소득세 세율 구간,1
+종합소득세,rising,종합 소득세 환급,40
 AI,top,클로드 ai,100
-AI,top,구글 ai,61
-AI,top,제미 나이 ai,60
-AI,top,claude ai,48
+AI,top,구글 ai,64
+AI,top,제미 나이 ai,61
+AI,top,claude ai,45
 AI,top,ai 영상,43
 AI,top,gemini ai,42
-AI,top,google ai,37
-AI,top,ai 추천,32
-AI,top,오픈 ai,31
-AI,top,ai 스튜디오,25
+AI,top,google ai,35
+AI,top,ai 추천,33
+AI,top,오픈 ai,32
 AI,top,제타 ai,24
 AI,top,ai studio,23
-AI,top,구글 ai 스튜디오,17
+AI,top,ai 스튜디오,22
+AI,top,ai 채팅,21
+AI,top,유니 브 ai,21
+AI,top,ai 모드,18
+AI,top,구글 ai 스튜디오,16
 AI,top,ai 그림,15
-AI,top,open ai,14
+AI,top,ppt ai,14
+AI,top,수노 ai,14
+AI,top,이미지 생성 ai,13
+AI,top,open ai,13
+AI,top,google ai studio,12
+AI,top,ai 안경,11
 AI,top,ai 검사기,9
-AI,top,ai 안경,7
-AI,top,캔바 ai,7
-AI,top,astra ai,7
-AI,top,ai detector,6
-AI,top,오픈 ai 코덱스,4
-AI,top,gamma ai,3
-AI,top,univ ai,3
-AI,top,dola ai,3
-AI,top,zeta ai,3
-AI,rising,오픈 ai 코덱스,1600
-AI,rising,thetawave ai,110
-AI,rising,ai 안경,110
-AI,rising,univ ai,110
-AI,rising,astra ai,50
-AI,rising,manus ai,50
+AI,top,ai 킬러,7
+AI,rising,ai 안경,200
+AI,rising,유니 브 ai,150
+AI,rising,univ ai,130
+AI,rising,thetawave ai,80
