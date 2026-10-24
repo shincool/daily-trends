@@ -1,29 +1,115 @@
 ﻿topic,type,query,value
+청약,top,lh,100
+청약,top,lh 청약,97
+청약,top,주택 청약,78
+청약,top,청약 플러스,74
+청약,top,lh 청약 플러스,61
+청약,top,청약 센터,48
+청약,top,sh,37
+청약,top,sh 청약,37
+청약,top,청약 통장,34
+청약,top,청년 청약,22
+청약,top,sh 청약 센터,21
+청약,top,청약 철회,19
+청약,top,lh 청약 센터,18
+청약,top,아파트 청약,17
+청약,top,gh 청약,17
+청약,top,청년 주택,17
+청약,top,청년 주택 청약,17
+청약,top,주택 청약 통장,13
+청약,top,청약 해지,13
+청약,top,gh 청약 센터,12
+청약,top,청약 일정,11
+청약,top,청약 당첨,11
+청약,top,lh 주택 청약,10
+청약,top,청년 주택 드림 청약,9
+청약,top,청약 신청,9
+청약,rising,gh 주택 청약 센터,160
+청약,rising,gh 청약 센터,150
+청약,rising,고덕 강일 3 단지 청약,150
+청약,rising,gh 청약,140
+청약,rising,등기소 부동산 소유 현황,90
+청약,rising,청약 순위 확인서,90
+청약,rising,청약 통장 순위 확인서,90
+청약,rising,청약 home,70
+청약,rising,cjddirgha,60
+청약,rising,한국 부동산 청약 홈,60
+청약,rising,한국 부동산 원 청약 홈,50
+아파트,top,아파트 단지,100
+아파트,top,아파트 시세,94
+아파트,top,신비 아파트,88
+아파트,top,서울 아파트,84
+아파트,top,현대 아파트,72
+아파트,top,임대 아파트,71
+아파트,top,아파트 매매,69
+아파트,top,주공 아파트,48
+아파트,top,아파트 아이,42
+아파트,top,자이 아파트,35
+아파트,top,아파트 관리비,35
+아파트,top,아파트 청약,29
+아파트,top,아파트 실거래,25
+아파트,top,아파트 실거래 가,21
+아파트,top,삼익 비치 타운 아파트,19
+아파트,top,은마 아파트,17
+아파트,top,아파트 평면도,15
+아파트,top,아파트 경매,15
+아파트,top,아파트 브랜드,13
+아파트,top,디 에이치 반포 라 클라스 아파트,12
+아파트,top,아파트 취득세,12
+아파트,top,목동 6 단지 아파트,8
+아파트,top,여의도 시범 아파트,7
+아파트,top,방학 신동아 1 단지 아파트,6
+아파트,top,잠실 주공 5 단지 아파트,3
+아파트,rising,완주 삼봉 지구 우미린 에코 포레 아파트,7650
+아파트,rising,삼익 비치 타운 아파트,3900
+아파트,rising,방학 신동아 1 단지 아파트,1900
+아파트,rising,목동 6 단지 아파트,1450
+아파트,rising,용산 산호 아파트,250
+아파트,rising,아파트 시뮬레이터,160
+아파트,rising,여의도 시범 아파트,120
+아파트,rising,잠실 주공 5 단지 아파트,70
+아파트,rising,친구 모아 아파트,60
+아파트,rising,거제 아파트 다나와,50
+아파트,rising,아파트 데스크,50
+종합소득세,top,종합 소득세,100
+종합소득세,top,종합 소득세 세율,6
+종합소득세,top,홈택스 종합 소득세,5
+종합소득세,top,금융 종합 소득세,5
+종합소득세,top,종합 소득세 환급,4
+종합소득세,top,종합 소득세 신고 방법,4
+종합소득세,top,국세청,3
+종합소득세,top,홈택스 종합 소득세 신고,3
+종합소득세,top,연말 정산,2
+종합소득세,top,종합 소득세 신고 기간,2
+종합소득세,top,종합 소득세 신고 대상,2
+종합소득세,top,홈 텍스,2
+종합소득세,top,종합 소득세 세율 구간,1
 AI,top,클로드 ai,100
-AI,top,구글 ai,72
-AI,top,제미 나이 ai,66
-AI,top,claude ai,51
-AI,top,무료 ai,48
-AI,top,gemini ai,48
-AI,top,ai 영상,46
+AI,top,구글 ai,73
+AI,top,claude ai,50
+AI,top,ai 영상,47
+AI,top,gemini ai,45
+AI,top,ai 추천,34
 AI,top,google ai,34
-AI,top,ai 추천,33
-AI,top,유니 브 ai,29
-AI,top,ai 스튜디오,25
+AI,top,유니 브 ai,28
 AI,top,ai studio,24
 AI,top,ai 채팅,21
-AI,top,제타 ai,20
 AI,top,오픈 ai,19
-AI,top,구글 ai 스튜디오,19
-AI,top,ai 모드,19
+AI,top,제타 ai,19
 AI,top,ai 안경,18
-AI,top,수노 ai,16
-AI,top,ppt ai,15
-AI,top,힉스 필드 ai,14
-AI,top,공부 ai,8
-AI,top,ai 데이터 센터,7
+AI,top,구글 ai 스튜디오,17
+AI,top,ai 모드,16
+AI,top,ai 에이전트,16
+AI,top,이미지 생성 ai,14
+AI,top,힉스 필드 ai,13
+AI,top,그록 ai,11
+AI,top,ai 검사기,11
+AI,top,ai 역량 검사,9
+AI,top,ai detector,7
 AI,top,univ ai,6
-AI,top,thetawave ai,3
-AI,rising,hailuo ai,130
-AI,rising,univ ai,60
-AI,rising,ai 안경,40
+AI,top,카피 킬러,4
+AI,top,마누스 ai,4
+AI,rising,hailuo ai,150
+AI,rising,유니 브 ai 무료,120
+AI,rising,ai 역량 검사,50
+AI,rising,ai 얼평,40
