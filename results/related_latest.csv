@@ -1,29 +1,109 @@
 ﻿topic,type,query,value
+청약,top,lh,100
+청약,top,lh 청약,98
+청약,top,주택 청약,88
+청약,top,청약 플러스,72
+청약,top,lh 청약 플러스,60
+청약,top,청약 센터,55
+청약,top,sh 청약,47
+청약,top,sh,47
+청약,top,청약 통장,39
+청약,top,gh 청약,24
+청약,top,sh 청약 센터,23
+청약,top,청년 주택,21
+청약,top,청년 주택 청약,21
+청약,top,lh 청약 센터,20
+청약,top,청약 철회,19
+청약,top,gh 청약 센터,17
+청약,top,광교 청약,17
+청약,top,고덕 청약,16
+청약,top,아파트 청약,15
+청약,top,고덕 강일 청약,14
+청약,top,청약 일정,11
+청약,top,lh 주택 청약,11
+청약,top,청년 주택 드림 청약,9
+청약,top,주택 청약 종합 저축,9
+청약,top,고덕 강일 3 단지 청약,9
+청약,rising,과천 디 에트 르 퍼스 티지 청약,800
+청약,rising,광교 자연앤 센트레빌 청약,550
+청약,rising,광교 청약,350
+청약,rising,과천 청약,250
+청약,rising,청약 통장 납입 횟수 확인,250
+청약,rising,고덕 강일 청약,250
+청약,rising,고덕 강일 3 단지 청약,200
+청약,rising,고덕 청약,200
+청약,rising,lh 청약 플러스 홈페이지,170
+청약,rising,한국 부동산 원 청약 홈,110
+청약,rising,sh 인터넷 청약 시스템,80
+청약,rising,sh 청약 시스템,70
+청약,rising,부동산 원 청약 홈,70
+청약,rising,청약 통장 담보 대출,70
+청약,rising,sh 인터넷 청약,50
+아파트,top,은마 아파트,100
+아파트,top,한남 더힐 아파트,80
+아파트,top,아파트 시세,32
+아파트,top,서울 아파트,30
+아파트,top,신비 아파트,29
+아파트,top,임대 아파트,24
+아파트,top,주공 아파트,16
+아파트,top,아파트 아이,14
+아파트,top,아파트 관리비,12
+아파트,top,아파트 청약,8
+아파트,top,아파트 실거래,8
+아파트,top,아파트 실거래 가,6
+아파트,top,목동 6 단지 아파트,6
+아파트,top,아파트 경매,5
+아파트,top,아파트 평면도,5
+아파트,top,은마 아파트 재건축,2
+아파트,top,대치동 은마 아파트,2
+아파트,top,목동 신시가지 9 단지 아파트,1
+아파트,top,가락 현대 6 차 아파트,1
+아파트,top,의왕 고천 디 에트 르 센트럴 아파트,0
+아파트,rising,한남 더힐 아파트,15100
+아파트,rising,의왕 고천 디 에트 르 센트럴 아파트,2400
+아파트,rising,은마 아파트,1150
+아파트,rising,대치동 은마 아파트,500
+아파트,rising,목동 신시가지 9 단지 아파트,300
+아파트,rising,가락 현대 6 차 아파트,250
+아파트,rising,은마 아파트 재건축,60
+종합소득세,top,종합 소득세,100
+종합소득세,top,종합 소득세 납부,12
+종합소득세,top,종합 소득세 세율,3
+종합소득세,top,종합 소득세 신고 방법,3
+종합소득세,top,종합 소득세 환급,3
+종합소득세,top,국세청,3
+종합소득세,top,국세청 종합 소득세,3
+종합소득세,top,종합 소득세 과세 표준,3
+종합소득세,top,종합 소득세 대상,3
+종합소득세,top,홈택스 종합 소득세 신고,3
+종합소득세,top,홈 텍스,2
+종합소득세,top,종합 소득세 신고 기간,2
+종합소득세,rising,홈 텍스,300
+종합소득세,rising,종합 소득세 납부,40
 AI,top,클로드 ai,100
-AI,top,구글 ai,65
-AI,top,제미 나이 ai,53
-AI,top,claude ai,46
-AI,top,ai 영상,41
-AI,top,gemini ai,36
+AI,top,구글 ai,62
+AI,top,claude ai,43
+AI,top,ai 영상,40
+AI,top,gemini ai,35
 AI,top,google ai,29
-AI,top,ai 추천,29
+AI,top,ai 추천,27
 AI,top,오픈 ai,26
-AI,top,ai 스튜디오,22
 AI,top,ai studio,21
 AI,top,제타 ai,18
-AI,top,ai 채팅,18
-AI,top,ai 모드,16
+AI,top,구글 ai 스튜디오,16
+AI,top,ai 채팅,16
+AI,top,ai 모드,15
 AI,top,수노 ai,15
-AI,top,구글 ai 스튜디오,15
-AI,top,ppt ai,15
-AI,top,ai 안경,14
-AI,top,ai 검사,11
-AI,top,google ai studio,11
-AI,top,open ai,10
-AI,top,ai 데이터 센터,8
-AI,top,피클 ai,7
-AI,top,novel ai,5
-AI,top,galaxy ai,4
-AI,rising,galaxy ai,400
-AI,rising,siri ai,200
-AI,rising,피클 ai,150
+AI,top,ai 안경,13
+AI,top,ai 이미지 생성,13
+AI,top,피클 ai,8
+AI,top,오픈 ai 코덱스,4
+AI,top,ppt 만들어 주는 ai,4
+AI,top,구글 플로우 ai,3
+AI,top,meshy ai,3
+AI,top,pix ai,2
+AI,top,manus ai,2
+AI,top,ai 채팅 채널,2
+AI,top,venice ai,2
+AI,rising,오픈 ai 코덱스,500
+AI,rising,피클 ai,130
