@@ -1,119 +1,120 @@
 ﻿topic,type,query,value
-청약,top,lh,100
-청약,top,lh 청약,98
-청약,top,청약 플러스,74
-청약,top,주택 청약,69
-청약,top,lh 청약 플러스,61
+청약,top,lh 청약,100
+청약,top,lh,94
+청약,top,주택 청약,75
+청약,top,청약 플러스,75
+청약,top,lh 청약 플러스,62
 청약,top,청약 센터,29
-청약,top,청약 통장,27
-청약,top,광교 청약,25
-청약,top,청년 청약,23
-청약,top,청년 주택 청약,18
-청약,top,청년 주택,18
-청약,top,sh 청약,16
+청약,top,청약 통장,28
+청약,top,청년 청약,24
+청약,top,광교 청약,21
+청약,top,청년 주택 청약,19
+청약,top,청년 주택,19
+청약,top,sh 청약,17
+청약,top,sh,17
 청약,top,lh 청약 센터,16
-청약,top,sh,16
-청약,top,광교 자연앤 센트레빌 청약,15
 청약,top,청약 철회,15
-청약,top,아파트 청약,13
+청약,top,아파트 청약,14
+청약,top,광교 자연앤 센트레빌 청약,13
 청약,top,주택 청약 통장,12
-청약,top,청약 신청,11
-청약,top,gh 청약,11
 청약,top,lh 주택 청약,11
-청약,top,청약 해지,10
+청약,top,청약 신청,11
+청약,top,gh 청약,10
 청약,top,청약 일정,10
+청약,top,용산 청약,9
 청약,top,sh 청약 센터,9
 청약,top,청년 청약 통장,8
-청약,rising,광교 자연앤 센트레빌 청약,200
-청약,rising,applyhome 청약 홈,180
-청약,rising,광교 청약,150
-청약,rising,청약 홈 바로 가기,120
-청약,rising,청약 home,110
-청약,rising,청약 홈 홈페이지,90
-청약,rising,bmc 청약 센터,80
-청약,rising,용산 해링턴 플레이스 청약,70
-청약,rising,용산 청약,60
-청약,rising,발 로란트 청약 철회 하는 법,60
+청약,rising,잠실 래미안 아이 파크 청약,900
+청약,rising,applyhome 청약 홈,150
+청약,rising,용산 해링턴 플레이스 청약,140
+청약,rising,용산 청약,100
+청약,rising,주택 청약 돈 빼기,70
+청약,rising,광교 자연앤 센트레빌 청약,70
+청약,rising,청약 홈 홈페이지,70
+청약,rising,광교 청약,70
+청약,rising,bmc 청약 센터,60
+청약,rising,과천 청약,50
 아파트,top,한남 더힐 아파트,100
-아파트,top,주공 아파트,79
-아파트,top,잠실 주공 5 단지 아파트,73
-아파트,top,압구정 현대 아파트,37
+아파트,top,주공 아파트,95
+아파트,top,잠실 주공 5 단지 아파트,82
+아파트,top,압구정 현대 아파트,45
 아파트,top,은마 아파트,36
-아파트,top,아파트 시세,15
-아파트,top,신비 아파트,13
-아파트,top,서울 아파트,12
-아파트,top,임대 아파트,10
-아파트,top,강남 아파트,8
-아파트,top,엘스 아파트,7
-아파트,top,아파트 아이,5
-아파트,top,아파트 관리비,4
-아파트,top,아파트 청약,4
-아파트,top,아시아 선수촌 아파트,4
+아파트,top,신비 아파트,15
+아파트,top,서울 아파트,15
+아파트,top,임대 아파트,12
+아파트,top,강남 아파트,10
+아파트,top,엘스 아파트,9
+아파트,top,아파트 아이,6
+아파트,top,아시아 선수촌 아파트,5
+아파트,top,아파트 청약,5
 아파트,top,아파트 실거래 가,3
-아파트,top,아파트 평면도,2
 아파트,top,아파트 시뮬레이터,2
-아파트,top,운암동 한국 아파트,1
 아파트,top,유재석 아파트,1
-아파트,rising,운암동 한국 아파트,11500
-아파트,rising,압구정 현대 아파트,2350
-아파트,rising,엘스 아파트,2250
-아파트,rising,아시아 선수촌 아파트,1500
-아파트,rising,잠실 주공 5 단지 아파트,700
+아파트,top,운암동 한국 아파트,1
+아파트,rising,운암동 한국 아파트,9350
+아파트,rising,압구정 현대 아파트,2500
+아파트,rising,엘스 아파트,1900
+아파트,rising,아시아 선수촌 아파트,1550
 아파트,rising,유재석 아파트,500
-아파트,rising,주공 아파트,350
-아파트,rising,강남 아파트,120
-아파트,rising,아파트 시뮬레이터,120
-아파트,rising,한남 더힐 아파트,70
+아파트,rising,잠실 주공 5 단지 아파트,250
+아파트,rising,주공 아파트,180
+아파트,rising,아파트 시뮬레이터,110
+아파트,rising,강남 아파트,100
 종합소득세,top,종합 소득세,100
 종합소득세,top,종합 소득세 납부,10
-종합소득세,top,홈택스 종합 소득세,7
-종합소득세,top,종합 소득세 세율,5
+종합소득세,top,홈택스 종합 소득세,6
+종합소득세,top,종합 소득세 신고 방법,5
+종합소득세,top,종합 소득세 세율,4
+종합소득세,top,종합 소득세 대상,4
 종합소득세,top,종합 소득세 환급,4
-종합소득세,top,종합 소득세 대상,3
 종합소득세,top,국세청,3
 종합소득세,top,종합 소득세 과세 표준,3
 종합소득세,top,종합 소득세 신고 기간,2
-종합소득세,rising,종합 소득세 환급,90
-종합소득세,rising,종합 소득세 세율,60
+종합소득세,rising,종합 소득세 환급,100
+종합소득세,rising,종합 소득세 신고 방법,50
 AI,top,ai 안경,100
-AI,top,클로드 ai,75
-AI,top,구글 ai,40
-AI,top,제미 나이 ai,36
-AI,top,세무사 ai 안경,30
-AI,top,claude ai,29
-AI,top,gemini ai,23
-AI,top,ai 추천,21
-AI,top,google ai,19
-AI,top,ai 게임,17
-AI,top,ai 스튜디오,15
-AI,top,세무사 수석 ai 안경,15
-AI,top,ai studio,14
-AI,top,ai 채팅,12
-AI,top,피클 ai,12
-AI,top,제타 ai,11
-AI,top,구글 ai 스튜디오,11
-AI,top,ai 안경 시험,11
-AI,top,ai 모드,10
-AI,top,ppt ai,10
-AI,top,오픈 ai,9
+AI,top,클로드 ai,61
+AI,top,구글 ai,31
+AI,top,제미 나이 ai,27
+AI,top,세무사 ai 안경,27
+AI,top,claude ai,21
+AI,top,gemini ai,17
+AI,top,google ai,14
+AI,top,ai 게임,13
+AI,top,세무사 수석 ai 안경,13
+AI,top,ai 스튜디오,11
+AI,top,수능 ai,10
+AI,top,ai studio,10
+AI,top,ai 안경 시험,10
+AI,top,ai 채팅,10
+AI,top,제타 ai,9
+AI,top,피클 ai,9
 AI,top,ai 안경 디시,9
-AI,top,ai 에이전트,8
-AI,top,세무사 시험 ai,7
-AI,top,ai 버블,6
-AI,rising,세무사 수석 ai 안경,113950
-AI,rising,세무사 ai 안경,111400
-AI,rising,세무사 시험 ai 안경,41350
-AI,rising,리트 만점자 ai 안경,15200
-AI,rising,리트 만점자,9900
-AI,rising,세무사 시험 ai,9650
-AI,rising,ai 안경 시험,1650
-AI,rising,ai 안경 디시,1050
-AI,rising,ai 안경,850
+AI,top,구글 ai 스튜디오,8
+AI,top,세무사 시험 ai,8
+AI,top,ai 안경 수능,7
+AI,top,ai 렌즈,5
+AI,top,세무사 시험 ai 안경,5
+AI,top,ai 버블,5
+AI,top,ai 안경 가격,5
+AI,rising,세무사 ai 안경,134850
+AI,rising,세무사 수석 ai 안경,49100
+AI,rising,리트 만점자 ai,44650
+AI,rising,리트 만점자 ai 안경,28550
+AI,rising,세무사 시험 ai 안경,22050
+AI,rising,세무사 시험 ai,18700
+AI,rising,초소형 카메라,6200
+AI,rising,ai 안경 시험,2000
+AI,rising,ai 안경 디시,1200
+AI,rising,ai 안경,1050
+AI,rising,ai 안경 구매,850
+AI,rising,ai 안경 수능,650
+AI,rising,ai 안경 가격,600
 AI,rising,삼성 ai 안경,600
-AI,rising,ai 안경 가격,500
-AI,rising,ai 안경 수능,400
-AI,rising,ai 렌즈,300
-AI,rising,ai 버블,250
-AI,rising,피클 ai,80
-AI,rising,꿈꾸던 어른 이 되었나요 ai,50
+AI,rising,로키 드 ai 글래스,500
+AI,rising,수능 ai,450
+AI,rising,ai 렌즈,350
+AI,rising,ai 버블,300
+AI,rising,galaxy ai,200
+AI,rising,피클 ai,60
 AI,rising,교수님 피하기 ai,40
